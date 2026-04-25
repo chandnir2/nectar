@@ -1,0 +1,36 @@
+# =========================
+# Python cache
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+
+# =========================
+# Jupyter / environment noise (if used later)
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Data files (DO NOT UPLOAD RAW DATA)
+# =========================
+data/
+*.csv
+
+# =========================
+# Generated outputs (plots, results)
+# =========================
+outputs/
+*.png
+*.pdf
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Optional environment files
+# =========================
+.env
+.venv/
