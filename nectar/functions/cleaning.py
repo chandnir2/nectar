@@ -137,7 +137,7 @@ def merge_clean_feederwatch(input_csv_files, output_csv):
 
     # Combine all of the csv files in input_csv_files
     merged_df = pd.concat(dataframe_list, axis=0, ignore_index=False)
-    # Same column names, so I want to stack on axis=0
+    # Same column names, so stack on axis=0
     # ignore_index False because column names are important for Feederwatch cleaning
 
 
