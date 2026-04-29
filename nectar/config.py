@@ -16,7 +16,7 @@ if not feederwatch_files:
 FEEDERWATCH_RAW = feederwatch_files[-1]
 print("Using feederwatch file:", FEEDERWATCH_RAW)
 
-STATION_DIR = BASE_DIR / "data" / "station"
+STATION_DIR = BASE_DIR / "data" / "sample" #adjust this for new station data
 
 # ................................
 # OUTPUTS
