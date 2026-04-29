@@ -105,6 +105,74 @@ def run_plots(results_df=None):
     return results_df
 
 
+
+
+def plot_species_dist(data):
+    '''
+    Plots the distribution of cleaned feederwatch data by unique species type stored in
+    'SPECIES_CODE'
+
+    
+    Inputs:
+    ------------
+    Accepts Pandas DataFrame input from clean_feederwatch or merge_clean_feederwatch.
+    DataFrame must contain column 'SPECIES_CODE'
+
+
+    Returns:
+    ------------
+    Plots Bar plot with code labels on the x axis and counts on the y axis
+
+    Returns the species counts sorted by highest frequency as a Pandas DataFrame.
+    
+    '''
+
+    plt.bar(data['SPECIES_CODE'].unique(), data['SPECIES_CODE'].value_counts(sort=False).values)
+    # For each unique type of bird found using .unique(), plot how many data points in the data set consist of those birds
+    # Works by looking at the unique species codes and then plotting the counts that align with those codes.
+    # sort=False so that value_counts() does not reorder the Species Code by most frequent result
+
+    plt.title('Bird Species Distribution')
+    plt.xlabel('Species Code')
+    plt.ylabel('Number of Species Measurements in Data')
+    plt.show()
+
+    return pd.DataFrame(data['SPECIES_CODE'].value_counts())
+
+
+
+
+def plot_location_dist(data):
+    '''
+    Plots the distribution of cleaned feederwatch data by unique location type stored in
+    'SUBNATIONAL1_CODE'
+
+    
+    Inputs:
+    ------------
+    Accepts Pandas DataFrame input from clean_feederwatch or merge_clean_feederwatch.
+    DataFrame must contain column 'SUBNATIONAL1_CODE'
+
+    
+    Returns:
+    ------------
+    Plots Bar plot with code labels on the x axis and counts on the y axis
+
+    Returns the location counts sorted by highest frequency as a Pandas DataFrame.
+    
+    '''
+    
+    plt.bar(data['SUBNATIONAL1_CODE'].unique(), data['SUBNATIONAL1_CODE'].value_counts(sort=False).values)
+    
+    plt.title('Bird Location Distribution')
+    plt.xlabel('Subnational Location Code')
+    plt.ylabel('Number of Location Measurements in Data')
+    plt.show()
+
+    return pd.DataFrame(data['SUBNATIONAL1_CODE'].value_counts())
+
+
+
 # ............................................
 # RUN DIRECTLY
 # ............................................
